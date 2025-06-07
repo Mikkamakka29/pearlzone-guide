@@ -109,35 +109,39 @@ export default function Home() {
             </button>
           </DialogTrigger>
 
-          <DialogContent className="max-w-sm bg-background text-foreground border-border shadow-lg rounded-xl">
-            <h3 className="text-lg font-semibold mb-4">
-              Get the Budapest Packing Checklist PDF
-            </h3>
+          <DialogContent
+            className="max-w-sm bg-background text-foreground border border-border
+                      shadow-xl rounded-xl space-y-5"
+          >
+            <h3 className="text-lg font-semibold">Get the Budapest Packing Checklist PDF</h3>
 
-            {/* 👉 swap for your real form (ConvertKit, Buttondown, etc.) */}
             <form
-              action="https://example.us1.list-manage.com/subscribe/post"
+              action="#"
               method="POST"
               className="flex flex-col gap-4"
             >
               <input
                 type="email"
-                name="EMAIL"
-                placeholder="you@example.com"
                 required
-                className="w-full px-3 py-2 border border-border rounded-md
-                text-sm bg-background placeholder:text-muted-foreground
-                focus:outline-none focus:ring-2 focus:ring-primary/60"
+                placeholder="you@example.com"
+                className="w-full px-3 py-2 rounded-md text-sm
+                          bg-background border border-border
+                          placeholder:text-muted-foreground
+                          focus:outline-none focus:ring-2 focus:ring-primary/60"
               />
+
+              {/* accent-gold button */}
               <button
                 type="submit"
-                className="bg-primary text-primary-foreground py-2 rounded-md font-medium hover:bg-primary/90 transition-colors"
+                className="bg-accent text-accent-foreground py-2 rounded-md font-medium
+                          shadow transition-colors
+                          hover:bg-[hsl(var(--accent)/.85)] focus:ring-2 focus:ring-accent/60"
               >
                 Send me the PDF
               </button>
-              <p className="text-xs text-gray-500">
-                We’ll email the checklist & occasional Budapest tips. Unsubscribe
-                anytime.
+
+              <p className="text-xs text-muted-foreground">
+                We’ll email the checklist & occasional Budapest tips. Unsubscribe anytime.
               </p>
             </form>
           </DialogContent>
