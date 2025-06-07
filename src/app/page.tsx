@@ -109,10 +109,7 @@ export default function Home() {
             </button>
           </DialogTrigger>
 
-          <DialogContent
-            className="max-w-sm bg-background text-foreground border border-border
-                      shadow-xl rounded-xl space-y-5"
-          >
+          <DialogContent className="max-w-sm bg-white dark:bg-card text-foreground border border-border shadow-xl rounded-xl space-y-5">
             <h3 className="text-lg font-semibold">Get the Budapest Packing Checklist PDF</h3>
 
             <form
