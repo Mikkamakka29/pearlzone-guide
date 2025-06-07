@@ -3,7 +3,7 @@ export default function Home() {
   return (
     <main>
       {/* HERO */}
-      <section className="h-[90vh] flex flex-col items-center justify-center text-center px-6">
+      <section style={{ backgroundImage: 'url(/hero.jpg)', backgroundSize: 'cover' }} className="relative h-[90vh] flex flex-col items-center justify-center text-center px-6 bg-gray-900/50 bg-blend-multiply">
         <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-4">
           Plan the Perfect <span className="text-primary">Budapest</span> Trip&nbsp;in&nbsp;Minutes
         </h1>
