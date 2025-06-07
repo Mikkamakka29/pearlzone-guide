@@ -109,7 +109,7 @@ export default function Home() {
             </button>
           </DialogTrigger>
 
-          <DialogContent className="max-w-sm">
+          <DialogContent className="max-w-sm bg-background text-foreground border-border shadow-lg rounded-xl">
             <h3 className="text-lg font-semibold mb-4">
               Get the Budapest Packing Checklist PDF
             </h3>
@@ -125,11 +125,13 @@ export default function Home() {
                 name="EMAIL"
                 placeholder="you@example.com"
                 required
-                className="w-full px-3 py-2 border rounded-md text-sm"
+                className="w-full px-3 py-2 border border-border rounded-md
+                text-sm bg-background placeholder:text-muted-foreground
+                focus:outline-none focus:ring-2 focus:ring-primary/60"
               />
               <button
                 type="submit"
-                className="bg-primary text-white py-2 rounded-md font-medium hover:bg-primary/90"
+                className="bg-primary text-primary-foreground py-2 rounded-md font-medium hover:bg-primary/90 transition-colors"
               >
                 Send me the PDF
               </button>
