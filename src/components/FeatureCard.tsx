@@ -1,11 +1,18 @@
-/* eslint-disable @next/next/no-img-element */
-export default function FeatureCard({ icon, text }:
-    { icon: string; text: string }) {
-    return (
-      <div className="bg-white/80 backdrop-blur p-6 rounded-2xl shadow-sm text-center flex flex-col items-center gap-4">
-        <img src={icon} alt="" className="w-10 h-10" />
-        <p className="font-semibold">{text}</p>
-      </div>
-    );
-  }
-  
+import { Card, CardContent } from "@/components/ui/card";
+import type { LucideIcon } from "lucide-react";
+
+interface FeatureProps {
+  icon: LucideIcon;
+  text: string;
+}
+
+export default function FeatureCard({ icon: Icon, text }: FeatureProps) {
+  return (
+    <Card className="shadow-sm">
+      <CardContent className="p-6 flex flex-col items-center gap-4">
+        <Icon className="w-8 h-8 text-primary" strokeWidth={1.8} />
+        <p className="font-semibold text-center">{text}</p>
+      </CardContent>
+    </Card>
+  );
+}
