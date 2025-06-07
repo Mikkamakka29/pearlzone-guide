@@ -4,12 +4,16 @@ export default function Home() {
     <main>
       {/* HERO */}
       <section
-  style={{ backgroundImage: 'url(/hero.jpg)', backgroundSize: 'cover' }}
-  className="relative h-[90vh] flex flex-col items-center justify-center text-center px-6
-             bg-gray-900/40   /* 40 % instead of 50 % = brighter image */
-             text-white       /* make all hero text white for contrast */"
+  style={{
+    backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
+                      url(/hero.jpg)`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+  className="relative h-[90vh] flex flex-col items-center justify-center
+             text-center px-6 text-white"
 >
-        <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-4">
+        <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-4 drop-shadow-lg">
           Plan the Perfect <span className="text-primary">Budapest</span> Trip&nbsp;in&nbsp;Minutes
         </h1>
         <p className="max-w-2xl text-lg sm:text-xl mb-8">
@@ -19,8 +23,9 @@ export default function Home() {
   href="https://pearlzone.gumroad.com/l/budapest-itinerary"
   target="_blank"
   rel="noopener"
-  className="inline-block bg-accent text-gray-900 px-6 py-3 rounded-2xl text-lg
-             font-semibold shadow hover:bg-accent/90 transition-colors gumroad-button"
+  className="inline-block bg-accent text-gray-900 px-6 py-3 rounded-2xl
+           text-lg font-semibold shadow hover:bg-accent/90 transition-colors
+           gumroad-button"
 >
           Download Itinerary (€17)
         </a>
