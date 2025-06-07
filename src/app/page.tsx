@@ -21,14 +21,12 @@ export default function Home() {
         </p>
         <a
   href="https://pearlzone.gumroad.com/l/budapest-itinerary"
-  target="_blank"
-  rel="noopener"
-  className="inline-block bg-accent text-gray-900 px-6 py-3 rounded-2xl
-           text-lg font-semibold shadow hover:bg-accent/90 transition-colors
-           gumroad-button"
+  data-gumroad-single-product="true"
+  className="inline-block bg-accent text-gray-900 px-8 py-4 rounded-2xl
+             text-lg font-semibold shadow hover:bg-accent/90 transition-colors"
 >
-          Download Itinerary (€17)
-        </a>
+  Download Itinerary (€17)
+</a>
       </section>
 
       {/* WHAT’S INSIDE */}
