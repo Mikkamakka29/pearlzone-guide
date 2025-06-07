@@ -97,7 +97,7 @@ export default function Home() {
       <footer className="bg-gray-900 text-gray-300 text-center py-8 text-sm space-x-4">
         © {new Date().getFullYear()} PearlZone.
 
-        <a href="/legal" className="underline hover:text-white">
+        <a href="/legal" className="underline text-accent hover:text-white">
           Legal
         </a>
 
