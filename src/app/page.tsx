@@ -21,9 +21,9 @@ export default function Home() {
         </p>
         <a
   href="https://pearlzone.gumroad.com/l/budapest-itinerary"
-  data-gumroad-single-product="true"
-  className="inline-block bg-accent text-gray-900 px-8 py-4 rounded-2xl
-             text-lg font-semibold shadow hover:bg-accent/90 transition-colors"
+  className="gumroad-button inline-block px-8 py-4 rounded-2xl text-lg font-semibold
+  transition-all duration-150 ease-out shadow-lg ring-2 ring-transparent
+  hover:ring-accent/70"
 >
   Download Itinerary (€17)
 </a>
