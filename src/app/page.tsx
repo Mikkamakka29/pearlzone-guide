@@ -71,7 +71,7 @@ export default function Home() {
           </Badge>
         </div>
       </section>
-
+      <section id="inside" className="py-20 bg-gray-50 mt-20"></section>
       {/* WHAT’S INSIDE */}
       <section id="inside" className="py-20 bg-gray-50">
         <h2 className="text-3xl font-bold text-center mb-14 text-accent">What’s Inside</h2>
@@ -99,13 +99,19 @@ export default function Home() {
         </div>
       </section>
 
-      <Alert className="container my-16 bg-accent/10">
-        <ShieldCheck className="w-6 h-6 text-accent" />
-        <AlertTitle className="font-semibold">7-Day Guarantee</AlertTitle>
-        <AlertDescription>
-          Not happy? Email us within a week and we’ll refund you. No questions.
-        </AlertDescription>
-      </Alert>
+      {/* 7-Day Risk-free Guarantee */}
+      <section className="py-20">
+        <Alert className="container bg-accent/10 border border-accent/30 flex items-start gap-4">
+          <ShieldCheck className="w-7 h-7 text-accent shrink-0 mt-1" />
+          <div>
+            <AlertTitle className="font-semibold">7-Day Guarantee</AlertTitle>
+            <AlertDescription>
+              Not happy? Email us within a week and we’ll refund you —
+              no questions asked.
+            </AlertDescription>
+          </div>
+        </Alert>
+      </section>
 
       {/* FAQ */}
       <section id="faq" className="py-20 bg-gray-50">
