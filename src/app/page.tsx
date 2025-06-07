@@ -1,81 +1,104 @@
 /* eslint-disable @next/next/no-img-element */
+import FeatureCard from '@/components/FeatureCard';
+import { Clock, MapPinned, UtensilsCrossed } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
 export default function Home() {
   return (
-    <main>
+    <>
       {/* HERO */}
       <section
-  style={{
-    backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-                      url(/hero.jpg)`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  }}
-  className="relative h-[90vh] flex flex-col items-center justify-center
-             text-center px-6 text-white"
->
-        <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-4 drop-shadow-lg">
+        style={{
+          backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.4),rgba(0,0,0,.6)),url(/hero.jpg)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+        className="h-[90vh] flex flex-col items-center justify-center text-center text-white px-6"
+      >
+        <h1 className="container text-4xl sm:text-6xl font-extrabold leading-tight drop-shadow-lg mb-6">
           Plan the Perfect <span className="text-primary">Budapest</span> Trip&nbsp;in&nbsp;Minutes
         </h1>
-        <p className="max-w-2xl text-lg sm:text-xl mb-8">
-          Skip 30&nbsp;tabs of research. Download an expert-crafted 3- or 5-day itinerary with hidden-gem tips &amp; Google&nbsp;Maps pins.
+        <p className="container max-w-2xl text-lg sm:text-xl mb-10 opacity-90">
+          Skip 30&nbsp;tabs of research. Download an expert-crafted itinerary packed with hidden-gem tips &amp; Google Maps pins.
         </p>
         <a
-  href="https://pearlzone.gumroad.com/l/budapest-itinerary"
-  className="gumroad-button inline-block px-8 py-4 rounded-2xl text-lg font-semibold
-  transition-all duration-150 ease-out shadow-lg ring-2 ring-transparent
-  hover:ring-accent/70"
->
-  Download Itinerary (€17)
-</a>
+          id="buy"
+          href="https://pearlzone.gumroad.com/l/budapest-itinerary"
+          className="gumroad-button inline-block px-8 py-4 rounded-2xl text-lg font-semibold
+                     transition-all duration-150 ease-out shadow-lg ring-2 ring-transparent
+                     hover:ring-accent/70"
+        >
+          Download Itinerary (€17)
+        </a>
       </section>
 
       {/* WHAT’S INSIDE */}
-      <section className="bg-gray-50 py-16 px-6">
-        <h2 className="text-3xl font-bold text-center mb-10 text-accent">What’s Inside</h2>
-        <div className="max-w-5xl mx-auto grid sm:grid-cols-3 gap-8">
+      <section id="inside" className="py-20 bg-gray-50">
+        <h2 className="text-3xl font-bold text-center mb-14 text-accent">What’s Inside</h2>
+        <div className="container grid gap-8 sm:grid-cols-3">
+          <FeatureCard icon={Clock}          text="Hour-by-hour schedule" />
+          <FeatureCard icon={MapPinned}      text="Google Maps links" />
+          <FeatureCard icon={UtensilsCrossed} text="Local foodie picks" />
+        </div>
+      </section>
+
+      {/* SOCIAL PROOF */}
+      <section className="py-20">
+        <h2 className="text-3xl font-bold text-center mb-14">Traveller&nbsp;Reviews</h2>
+        <div className="container max-w-3xl space-y-8">
           {[
-            'Hour-by-hour schedule',
-            'Google Maps links',
-            'Local foodie picks',
-          ].map((item) => (
-            <div
-              key={item}
-              className="bg-white p-6 rounded-2xl shadow flex items-center justify-center text-center font-semibold"
-            >
-              {item}
-            </div>
+            ['“Worth every euro — saved us a full day of planning.”', '— Anna K.'],
+            ['“Loved the hidden cafés! Perfect 3-day flow.”', '— Liam R.'],
+            ['“Maps links made navigating Budapest a breeze.”', '— Giulia F.'],
+          ].map(([quote, by]) => (
+            <figure key={by} className="bg-gray-50 p-6 rounded-2xl shadow">
+              <blockquote className="italic mb-2">{quote}</blockquote>
+              <figcaption className="text-sm text-gray-500">{by}</figcaption>
+            </figure>
           ))}
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-16 px-6">
-        <h2 className="text-3xl font-bold text-center mb-10">FAQ</h2>
-        <div className="max-w-3xl mx-auto space-y-6">
-          <details className="bg-gray-50 p-4 rounded-xl">
-            <summary className="cursor-pointer font-semibold">
-              How do I get the PDF?
-            </summary>
-            <p className="mt-2">Instant download &amp; email via Gumroad after payment.</p>
-          </details>
-          <details className="bg-gray-50 p-4 rounded-xl">
-            <summary className="cursor-pointer font-semibold">
-              Does it work offline?
-            </summary>
-            <p className="mt-2">Yes—save it in Books/Kindle or any PDF reader.</p>
-          </details>
-        </div>
+      <section id="faq" className="py-20 bg-gray-50">
+        <h2 className="text-3xl font-bold text-center mb-14">FAQ</h2>
+        <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
+          <AccordionItem value="item-1">
+            <AccordionTrigger>How do I get the PDF?</AccordionTrigger>
+            <AccordionContent>
+              Instant download + email via Gumroad right after payment.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-2">
+            <AccordionTrigger>Does it work offline?</AccordionTrigger>
+            <AccordionContent>
+              Yes — save it in any PDF reader; all links still open in Google Maps.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-3">
+            <AccordionTrigger>Refunds?</AccordionTrigger>
+            <AccordionContent>
+              Digital items are non-refundable, but email us within 7 days for any file
+              issues and we’ll sort you out.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </section>
 
       {/* FOOTER */}
       <footer className="bg-gray-900 text-gray-300 text-center py-8 text-sm">
-        © {new Date().getFullYear()} PearlZone.{' '}
-        <a href="/legal" className="underline text-accent">
-          Legal
-        </a>
+        © {new Date().getFullYear()} PearlZone. 
+        <a href="/legal" className="underline hover:text-white">Legal</a>
       </footer>
 
       <script async src="https://gumroad.com/js/gumroad.js"></script>
-    </main>
+    </>
   );
 }
