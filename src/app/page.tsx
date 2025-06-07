@@ -8,6 +8,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Star } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { ShieldCheck } from "lucide-react";
 
 export default function Home() {
   return (
@@ -30,12 +34,42 @@ export default function Home() {
         <a
           id="buy"
           href="https://pearlzone.gumroad.com/l/budapest-itinerary"
-          className="gumroad-button inline-block px-8 py-4 rounded-2xl text-lg font-semibold
-                     transition-all duration-150 ease-out shadow-lg ring-2 ring-transparent
-                     hover:ring-accent/70"
-        >
+          className="gumroad-button inline-block px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-150 ease-out shadow-lg ring-2 ring-transparent hover:ring-accent/70">
           Download Itinerary (€17)
         </a>
+        <div className="mt-4 flex items-center gap-2">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star key={i} className="w-5 h-5 text-accent fill-accent" />
+          ))}
+          <span className="text-sm opacity-90">4.9/5 • 126 travelers</span>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <h2 className="text-3xl font-bold text-center mb-14">Why PearlZone?</h2>
+        <div className="container grid gap-8 sm:grid-cols-3">
+          <Badge className="justify-start gap-3 p-6">
+            <Clock className="w-6 h-6 text-primary" />
+            <div>
+              <p className="font-semibold">Save 10 h of planning</p>
+              <p className="text-sm text-muted-foreground">Skip research rabbit-holes</p>
+            </div>
+          </Badge>
+          <Badge className="justify-start gap-3 p-6">
+            <MapPinned className="w-6 h-6 text-primary" />
+            <div>
+              <p className="font-semibold">Seamless Google Maps</p>
+              <p className="text-sm text-muted-foreground">Tap-to-navigate pins</p>
+            </div>
+          </Badge>
+          <Badge className="justify-start gap-3 p-6">
+            <UtensilsCrossed className="w-6 h-6 text-primary" />
+            <div>
+              <p className="font-semibold">Local foodie secrets</p>
+              <p className="text-sm text-muted-foreground">Eat beyond goulash</p>
+            </div>
+          </Badge>
+        </div>
       </section>
 
       {/* WHAT’S INSIDE */}
@@ -64,6 +98,14 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <Alert className="container my-16 bg-accent/10">
+        <ShieldCheck className="w-6 h-6 text-accent" />
+        <AlertTitle className="font-semibold">7-Day Guarantee</AlertTitle>
+        <AlertDescription>
+          Not happy? Email us within a week and we’ll refund you. No questions.
+        </AlertDescription>
+      </Alert>
 
       {/* FAQ */}
       <section id="faq" className="py-20 bg-gray-50">
