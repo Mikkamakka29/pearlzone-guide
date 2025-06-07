@@ -45,40 +45,34 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20">
-        <h2 className="text-3xl font-bold text-center mb-14">Why PearlZone?</h2>
-        <div className="container grid gap-8 sm:grid-cols-3">
-          <Badge className="justify-start gap-3 p-6">
-            <Clock className="w-6 h-6 text-primary" />
+      {/* WHY PEARLZONE */}
+      <section className="py-24 bg-background">
+        <h2 className="text-3xl font-bold text-center mb-16">Why PearlZone?</h2>
+
+        <div className="container grid gap-10 sm:grid-cols-3">
+          <Badge className="flex items-start gap-4 p-6 bg-white/90 dark:bg-card shadow border border-border">
+            <Clock className="w-6 h-6 text-primary mt-1" />
             <div>
               <p className="font-semibold">Save 10 h of planning</p>
               <p className="text-sm text-muted-foreground">Skip research rabbit-holes</p>
             </div>
           </Badge>
-          <Badge className="justify-start gap-3 p-6">
-            <MapPinned className="w-6 h-6 text-primary" />
+
+          <Badge className="flex items-start gap-4 p-6 bg-white/90 dark:bg-card shadow border border-border">
+            <MapPinned className="w-6 h-6 text-primary mt-1" />
             <div>
               <p className="font-semibold">Seamless Google Maps</p>
               <p className="text-sm text-muted-foreground">Tap-to-navigate pins</p>
             </div>
           </Badge>
-          <Badge className="justify-start gap-3 p-6">
-            <UtensilsCrossed className="w-6 h-6 text-primary" />
+
+          <Badge className="flex items-start gap-4 p-6 bg-white/90 dark:bg-card shadow border border-border">
+            <UtensilsCrossed className="w-6 h-6 text-primary mt-1" />
             <div>
               <p className="font-semibold">Local foodie secrets</p>
               <p className="text-sm text-muted-foreground">Eat beyond goulash</p>
             </div>
           </Badge>
-        </div>
-      </section>
-      <section id="inside" className="py-20 bg-gray-50 mt-20"></section>
-      {/* WHAT’S INSIDE */}
-      <section id="inside" className="py-20 bg-gray-50">
-        <h2 className="text-3xl font-bold text-center mb-14 text-accent">What’s Inside</h2>
-        <div className="container grid gap-8 sm:grid-cols-3">
-          <FeatureCard icon={Clock}          text="Hour-by-hour schedule" />
-          <FeatureCard icon={MapPinned}      text="Google Maps links" />
-          <FeatureCard icon={UtensilsCrossed} text="Local foodie picks" />
         </div>
       </section>
 
