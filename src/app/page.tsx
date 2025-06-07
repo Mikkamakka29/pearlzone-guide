@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 export default function Home() {
   return (
@@ -93,9 +94,52 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-gray-900 text-gray-300 text-center py-8 text-sm">
-        © {new Date().getFullYear()} PearlZone. 
-        <a href="/legal" className="underline text-accent hover:text-white">Legal</a>
+      <footer className="bg-gray-900 text-gray-300 text-center py-8 text-sm space-x-4">
+        © {new Date().getFullYear()} PearlZone.
+
+        <a href="/legal" className="underline hover:text-white">
+          Legal
+        </a>
+
+        {/* Free checklist popup */}
+        <Dialog>
+          <DialogTrigger asChild>
+            <button className="underline hover:text-white">
+              Free packing checklist
+            </button>
+          </DialogTrigger>
+
+          <DialogContent className="max-w-sm">
+            <h3 className="text-lg font-semibold mb-4">
+              Get the Budapest Packing Checklist PDF
+            </h3>
+
+            {/* 👉 swap for your real form (ConvertKit, Buttondown, etc.) */}
+            <form
+              action="https://example.us1.list-manage.com/subscribe/post"
+              method="POST"
+              className="flex flex-col gap-4"
+            >
+              <input
+                type="email"
+                name="EMAIL"
+                placeholder="you@example.com"
+                required
+                className="w-full px-3 py-2 border rounded-md text-sm"
+              />
+              <button
+                type="submit"
+                className="bg-primary text-white py-2 rounded-md font-medium hover:bg-primary/90"
+              >
+                Send me the PDF
+              </button>
+              <p className="text-xs text-gray-500">
+                We’ll email the checklist & occasional Budapest tips. Unsubscribe
+                anytime.
+              </p>
+            </form>
+          </DialogContent>
+        </Dialog>
       </footer>
 
       <script async src="https://gumroad.com/js/gumroad.js"></script>
