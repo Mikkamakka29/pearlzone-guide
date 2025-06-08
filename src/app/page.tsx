@@ -95,15 +95,19 @@ export default function Home() {
       {/* 7-Day Risk-free Guarantee */}
       <section className="py-20">
       <Alert
-        className="container flex items-center gap-4 p-6
+        className="container flex items-center gap-4
+                  p-4 sm:p-6
                   bg-accent/10 border border-accent/30 rounded-2xl"
       >
-        <ShieldCheck className="w-7 h-7 text-accent shrink-0" />
+        <ShieldCheck className="w-6 h-6 text-accent shrink-0" />
 
         <div className="space-y-1">
-          <AlertTitle className="font-semibold">7-Day Guarantee</AlertTitle>
-          <AlertDescription>
-            Not happy? Email us within a week and we’ll refund you — no questions asked.
+          <AlertTitle className="font-semibold leading-none">
+            7-Day&nbsp;Guarantee
+          </AlertTitle>
+          <AlertDescription className="leading-snug">
+            Not happy? Email us within a week and we’ll refund you —
+            no questions asked.
           </AlertDescription>
         </div>
       </Alert>
