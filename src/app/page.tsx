@@ -45,7 +45,7 @@ export default function Home() {
       </section>
 
       {/* WHY PEARLZONE */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-background scroll-mt-24">
         <h2 className="text-3xl font-bold text-center mb-16">Why PearlZone?</h2>
 
         <div className="container grid gap-10 sm:grid-cols-3">
@@ -76,7 +76,7 @@ export default function Home() {
       </section>
 
       {/* SOCIAL PROOF */}
-      <section className="py-20">
+      <section className="py-20 scroll-mt-24">
         <h2 className="text-3xl font-bold text-center mb-14">Traveller&nbsp;Reviews</h2>
         <div className="container max-w-3xl space-y-8">
           {[
@@ -93,7 +93,7 @@ export default function Home() {
       </section>
 
       {/* 7-Day Risk-free Guarantee */}
-      <section className="py-20">
+      <section className="py-20 scroll-mt-24">
       <Alert
         className="container mx-auto max-w-4xl        /* limit width to 1024 px */
                   flex items-center gap-4
@@ -112,7 +112,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-20 bg-gray-50">
+      <section id="faq" className="py-20 bg-gray-50 scroll-mt-24">
         <h2 className="text-3xl font-bold text-center mb-14">FAQ</h2>
         <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
           <AccordionItem value="item-1">
