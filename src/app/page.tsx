@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import FeatureCard from '@/components/FeatureCard';
 import { Clock, MapPinned, UtensilsCrossed } from "lucide-react";
 import {
   Accordion,
@@ -95,16 +94,19 @@ export default function Home() {
 
       {/* 7-Day Risk-free Guarantee */}
       <section className="py-20">
-        <Alert className="container bg-accent/10 border border-accent/30 flex items-start gap-4">
-          <ShieldCheck className="w-7 h-7 text-accent shrink-0 mt-1" />
-          <div>
-            <AlertTitle className="font-semibold">7-Day Guarantee</AlertTitle>
-            <AlertDescription>
-              Not happy? Email us within a week and we’ll refund you —
-              no questions asked.
-            </AlertDescription>
-          </div>
-        </Alert>
+      <Alert
+        className="container flex items-center gap-4 p-6
+                  bg-accent/10 border border-accent/30 rounded-2xl"
+      >
+        <ShieldCheck className="w-7 h-7 text-accent shrink-0" />
+
+        <div className="space-y-1">
+          <AlertTitle className="font-semibold">7-Day Guarantee</AlertTitle>
+          <AlertDescription>
+            Not happy? Email us within a week and we’ll refund you — no questions asked.
+          </AlertDescription>
+        </div>
+      </Alert>
       </section>
 
       {/* FAQ */}
