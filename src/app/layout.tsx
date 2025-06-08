@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="min-h-screen font-sans text-gray-900 antialiased bg-white">
         <Header />
-        <main className="pt-16">{children}</main>
+        <main>{children}</main>
         <div className="fixed bottom-0 inset-x-0 z-40 flex sm:hidden justify-center p-4 bg-white/90 backdrop-blur border-t border-border">
           <a
             href="#buy"
