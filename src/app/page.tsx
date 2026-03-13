@@ -1,197 +1,257 @@
 /* eslint-disable @next/next/no-img-element */
-import { Clock, MapPinned, UtensilsCrossed } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Star } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, Download } from 'lucide-react'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { Card, CardContent } from '@/components/ui/card'
+import { ChecklistDialog } from '@/components/ChecklistDialog'
+import { PdfPreviewDialog } from '@/components/PdfPreviewDialog'
+import { SectionHeading } from '@/components/SectionHeading'
+import { dayCards, faqs, heroPills, premiumBullets, valueProps } from '@/lib/site-content'
+import { siteConfig } from '@/lib/site-config'
 
 export default function Home() {
   return (
     <>
-      {/* HERO */}
-      <section
-        style={{
-          backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.4),rgba(0,0,0,.6)),url(/hero.jpg)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-        className="h-[90vh] flex flex-col items-center justify-center text-center text-white px-6"
-      >
-        <h1 className="container text-4xl sm:text-6xl font-extrabold leading-tight drop-shadow-lg mb-6">
-          Plan the Perfect <span className="text-primary">Budapest</span> Trip&nbsp;in&nbsp;Minutes
-        </h1>
-        <p className="container max-w-2xl text-lg sm:text-xl mb-10 opacity-90">
-          Skip 30&nbsp;tabs of research. Download an expert-crafted itinerary packed with hidden-gem tips &amp; Google Maps pins.
-        </p>
-        <a
-          id="buy"
-          href="https://pearlzone.gumroad.com/l/budapest-itinerary"
-          className="gumroad-button inline-block px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-150 ease-out shadow-lg ring-2 ring-transparent hover:ring-accent/70">
-          Download Itinerary (€17)
-        </a>
-        <div className="mt-4 flex items-center gap-2">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Star key={i} className="w-5 h-5 text-accent fill-accent" />
-          ))}
-          <span className="text-sm opacity-90">4.9/5 • 126 travelers</span>
-        </div>
-      </section>
+      <section className="relative isolate overflow-hidden bg-slate-950">
+        <img
+          src="/hero.jpg"
+          alt="Golden-hour aerial view of Budapest"
+          className="absolute inset-0 h-full w-full object-cover opacity-80"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,40,0.45)_0%,rgba(7,17,40,0.72)_50%,rgba(7,17,40,0.88)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,rgba(7,17,40,0)_0%,rgba(247,243,237,1)_100%)]" />
 
-      {/* WHY PEARLZONE */}
-      <section className="py-24 bg-background scroll-mt-24">
-        <h2 className="text-3xl font-bold text-center mb-16">Why PearlZone?</h2>
-
-        <div className="container grid gap-10 sm:grid-cols-3">
-          <Badge className="flex items-start gap-4 p-6 bg-white/90 dark:bg-card shadow border border-border">
-            <Clock className="w-6 h-6 text-primary mt-1" />
-            <div>
-              <p className="font-semibold">Save 10 h of planning</p>
-              <p className="text-sm text-muted-foreground">Skip research rabbit-holes</p>
+        <div className="container relative z-10 flex min-h-[88svh] items-center pt-28 pb-20">
+          <div className="max-w-3xl text-white">
+            <div className="mb-6 flex flex-wrap gap-2">
+              {heroPills.map((pill) => (
+                <span
+                  key={pill}
+                  className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-white/90 backdrop-blur"
+                >
+                  {pill}
+                </span>
+              ))}
             </div>
-          </Badge>
 
-          <Badge className="flex items-start gap-4 p-6 bg-white/90 dark:bg-card shadow border border-border">
-            <MapPinned className="w-6 h-6 text-primary mt-1" />
-            <div>
-              <p className="font-semibold">Seamless Google Maps</p>
-              <p className="text-sm text-muted-foreground">Tap-to-navigate pins</p>
-            </div>
-          </Badge>
+            <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+              Plan Budapest in minutes, not in 30 browser tabs.
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-xl sm:leading-8">
+              Get a premium 3-day core itinerary with a clean 2-day extension, plus a genuinely useful free packing checklist you can download instantly.
+            </p>
 
-          <Badge className="flex items-start gap-4 p-6 bg-white/90 dark:bg-card shadow border border-border">
-            <UtensilsCrossed className="w-6 h-6 text-primary mt-1" />
-            <div>
-              <p className="font-semibold">Local foodie secrets</p>
-              <p className="text-sm text-muted-foreground">Eat beyond goulash</p>
-            </div>
-          </Badge>
-        </div>
-      </section>
-
-      {/* SOCIAL PROOF */}
-      <section className="py-20 scroll-mt-24">
-        <h2 className="text-3xl font-bold text-center mb-14">Traveller&nbsp;Reviews</h2>
-        <div className="container max-w-3xl space-y-8">
-          {[
-            ['“Worth every euro — saved us a full day of planning.”', '— Anna K.'],
-            ['“Loved the hidden cafés! Perfect 3-day flow.”', '— Liam R.'],
-            ['“Maps links made navigating Budapest a breeze.”', '— Giulia F.'],
-          ].map(([quote, by]) => (
-            <figure key={by} className="bg-gray-50 p-6 rounded-2xl shadow">
-              <blockquote className="italic mb-2">{quote}</blockquote>
-              <figcaption className="text-sm text-gray-500">{by}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
-
-      {/* 7-Day Risk-free Guarantee */}
-      <section className="py-20 scroll-mt-24">
-      <Alert
-        className="container mx-auto max-w-4xl        /* limit width to 1024 px */
-                  flex items-center gap-4
-                  p-6 bg-accent/10 border border-accent/30 rounded-2xl">
-        <ShieldCheck className="w-7 h-7 text-accent shrink-0 self-start" />  {/* icon top-aligns */}     
-
-        <div className="space-y-1">
-          <AlertTitle className="font-semibold leading-none">
-            7-Day&nbsp;Guarantee
-          </AlertTitle>
-          <AlertDescription className="leading-snug">
-            Not happy? Email us within a week and we’ll refund you — no questions asked.
-          </AlertDescription>
-        </div>
-      </Alert>
-      </section>
-
-      {/* FAQ */}
-      <section id="faq" className="py-20 bg-gray-50 scroll-mt-24">
-        <h2 className="text-3xl font-bold text-center mb-14">FAQ</h2>
-        <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>How do I get the PDF?</AccordionTrigger>
-            <AccordionContent>
-              Instant download + email via Gumroad right after payment.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="item-2">
-            <AccordionTrigger>Does it work offline?</AccordionTrigger>
-            <AccordionContent>
-              Yes — save it in any PDF reader; all links still open in Google Maps.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="item-3">
-            <AccordionTrigger>Refunds?</AccordionTrigger>
-            <AccordionContent>
-              Digital items are non-refundable, but email us within 7 days for any file
-              issues and we’ll sort you out.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="bg-gray-900 text-gray-300 text-center py-8 text-sm space-x-4">
-        © {new Date().getFullYear()} PearlZone.
-
-        <a href="/legal" className="underline text-accent hover:text-white">
-          Legal
-        </a>
-
-        {/* Free checklist popup */}
-        <Dialog>
-          <DialogTrigger asChild>
-            <button className="underline hover:text-white">
-              Free packing checklist
-            </button>
-          </DialogTrigger>
-
-          <DialogContent className="max-w-sm bg-white dark:bg-card text-foreground border border-border shadow-xl rounded-xl space-y-5">
-            <h3 className="text-lg font-semibold">Get the Budapest Packing Checklist PDF</h3>
-
-            <form
-              action="#"
-              method="POST"
-              className="flex flex-col gap-4"
-            >
-              <input
-                type="email"
-                required
-                placeholder="you@example.com"
-                className="w-full px-3 py-2 rounded-md text-sm
-                          bg-background border border-border
-                          placeholder:text-muted-foreground
-                          focus:outline-none focus:ring-2 focus:ring-primary/60"
-              />
-
-              {/* accent-gold button */}
-              <button
-                type="submit"
-                className="bg-accent text-accent-foreground py-2 rounded-md font-medium
-                          shadow transition-colors
-                          hover:bg-[hsl(var(--accent)/.85)] focus:ring-2 focus:ring-accent/60"
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={siteConfig.gumroadUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-2xl shadow-primary/20 transition hover:bg-primary/90"
               >
-                Send me the PDF
-              </button>
+                Buy the premium itinerary
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <ChecklistDialog />
+            </div>
 
-              <p className="text-xs text-muted-foreground">
-                We’ll email the checklist & occasional Budapest tips. Unsubscribe anytime.
+            <div className="mt-8 flex flex-wrap gap-5 text-sm text-white/80">
+              <span className="inline-flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-accent" />
+                Designed to be saved offline before you fly
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <Download className="h-4 w-4 text-accent" />
+                Free packing checklist available right now
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2] py-20">
+        <div className="container grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+          <Card className="overflow-hidden rounded-[2rem] border-slate-200 bg-white shadow-sm">
+            <CardContent className="p-8 sm:p-10">
+              <SectionHeading
+                eyebrow="Premium offer"
+                title="What the premium PDF actually helps you do"
+                body="It is built to remove sequencing decisions, protect your energy, and keep the city feeling elegant instead of over-packed."
+              />
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {premiumBullets.map(({ title, body, icon: Icon }) => (
+                  <div key={title} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                    <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-2 text-primary">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <p className="font-semibold text-slate-900">{title}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">{body}</p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="overflow-hidden rounded-[2rem] border-slate-200 bg-slate-950 text-white shadow-sm">
+            <CardContent className="p-8 sm:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+                Free download
               </p>
-            </form>
-          </DialogContent>
-        </Dialog>
-      </footer>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight">
+                Start with the practical companion file.
+              </h2>
+              <p className="mt-4 text-base leading-7 text-white/80">
+                Download a short, practical companion PDF that handles the packing and prep side of the trip before you buy anything.
+              </p>
 
-      <script async src="https://gumroad.com/js/gumroad.js"></script>
+              <div className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-3">
+                <img
+                  src={siteConfig.checklistPreviewPages[0].src}
+                  alt={siteConfig.checklistPreviewPages[0].alt}
+                  className="aspect-[4/5] w-full rounded-[1.2rem] object-cover"
+                />
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <ChecklistDialog
+                  triggerLabel="Preview + download"
+                  className="inline-flex items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition hover:bg-accent/90"
+                />
+                <a
+                  href={siteConfig.freeChecklistUrl}
+                  download
+                  className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
+                >
+                  <Download className="h-4 w-4" />
+                  Direct PDF download
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Preview gallery"
+            title="Preview the premium PDF before you buy"
+            body="The preview pages show the tone, structure, and readability of the premium guide so you know exactly what kind of trip planning help you are getting."
+          />
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {siteConfig.premiumPreviewPages.map((page) => (
+              <PdfPreviewDialog
+                key={page.src}
+                src={page.src}
+                alt={page.alt}
+                label={page.label}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2] py-20">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Route architecture"
+            title="The guide is organised around cleaner days, not more attractions"
+            body="This is what makes the PDF feel worth paying for: the city is sequenced in a way that reduces friction and keeps energy where it matters."
+          />
+          <div className="mt-10 grid gap-6 lg:grid-cols-5">
+            {dayCards.map((day) => (
+              <div
+                key={day.label}
+                className="rounded-[1.6rem] border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                  {day.label}
+                </p>
+                <h3 className="mt-3 text-xl font-bold tracking-tight text-slate-900">
+                  {day.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{day.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Project value"
+            title="Why this guide lands better than generic travel posts"
+            body="It is designed to reduce decision fatigue, not impress you with the longest possible list of things to do."
+          />
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {valueProps.map(({ title, body, icon: Icon }) => (
+              <Card key={title} className="rounded-[1.5rem] border-slate-200 bg-slate-50 shadow-none">
+                <CardContent className="p-6">
+                  <div className="inline-flex rounded-xl bg-primary/10 p-2 text-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-bold tracking-tight text-slate-900">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{body}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#faf7f2] py-20">
+        <div className="container grid gap-8 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:grid-cols-[1fr_auto] lg:items-center lg:p-10">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+              Ready to plan
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+              Use the free checklist first, then grab the full premium itinerary when you are ready to lock the route.
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
+              The premium PDF is built for visitors who want Budapest to feel clean, paced, and easy to follow on the ground - not like a race between disconnected highlights.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3 lg:justify-end">
+            <ChecklistDialog
+              triggerLabel="See the free checklist"
+              className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+            />
+            <a
+              href={siteConfig.gumroadUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-4 text-sm font-semibold text-white shadow-lg transition hover:bg-primary/90"
+            >
+              Buy the premium PDF
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="container grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+          <SectionHeading
+            eyebrow="FAQ"
+            title="Frequently asked before buying"
+            body="The goal is to answer the practical questions quickly so the page stays calm and conversion-friendly."
+          />
+          <Accordion type="single" collapsible className="w-full rounded-[1.6rem] border border-slate-200 bg-slate-50 px-6">
+            {faqs.map((item, index) => (
+              <AccordionItem key={item.q} value={`item-${index}`}>
+                <AccordionTrigger className="text-base font-semibold text-slate-900 hover:no-underline">
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent className="pb-5 text-sm leading-7 text-slate-600">
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
     </>
-  );
+  )
 }

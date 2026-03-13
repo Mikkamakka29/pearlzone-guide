@@ -1,27 +1,61 @@
-import '@/app/globals.css';
-import type { Metadata } from 'next';
-import Header from '@/components/Header';
+import '@/app/globals.css'
+import type { Metadata } from 'next'
+import Header from '@/components/Header'
+import { SiteFooter } from '@/components/SiteFooter'
+import { siteConfig } from '@/lib/site-config'
 
 export const metadata: Metadata = {
-  title: 'PearlZone – Budapest Itinerary',
-  description: 'Plan the perfect Budapest trip in minutes.',
-};
+  metadataBase: new URL(siteConfig.siteUrl),
+  title: {
+    default: 'PearlZone | Budapest itinerary PDF + free packing checklist',
+    template: `%s | ${siteConfig.name}`,
+  },
+  description:
+    'A polished Budapest itinerary landing page with a premium PDF offer, real preview pages, and a genuinely useful free packing checklist.',
+  openGraph: {
+    title: 'PearlZone | Budapest itinerary PDF + free packing checklist',
+    description:
+      'A polished Budapest itinerary landing page with a premium PDF offer, real preview pages, and a genuinely useful free packing checklist.',
+    url: siteConfig.siteUrl,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: '/hero.jpg',
+        width: 1456,
+        height: 816,
+        alt: 'Golden-hour Budapest skyline used as the PearlZone hero image',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PearlZone | Budapest itinerary PDF + free packing checklist',
+    description:
+      'A polished Budapest itinerary landing page with a premium PDF offer, real preview pages, and a genuinely useful free packing checklist.',
+    images: ['/hero.jpg'],
+  },
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen font-sans text-gray-900 antialiased bg-white">
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <Header />
         <main>{children}</main>
-        <div className="fixed bottom-0 inset-x-0 z-40 flex sm:hidden justify-center p-4 bg-white/90 backdrop-blur border-t border-border">
+        <SiteFooter />
+        <div className="fixed inset-x-0 bottom-0 z-30 border-t border-slate-200 bg-white/95 p-3 backdrop-blur sm:hidden">
           <a
-            href="#buy"
-            className="bg-primary text-white py-3 px-6 rounded-full font-semibold shadow-lg"
+            href={siteConfig.gumroadUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-lg"
           >
-            Get Itinerary (€17)
+            Buy the premium itinerary
           </a>
         </div>
       </body>
     </html>
-  );
+  )
 }
