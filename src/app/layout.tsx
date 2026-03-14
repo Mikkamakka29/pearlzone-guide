@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    'A polished Budapest itinerary landing page with a premium PDF offer, real preview pages, and a genuinely useful free packing checklist.',
+    'Carefully paced Budapest itinerary PDFs with a free packing checklist and a premium 3-to-5-day city guide.',
   openGraph: {
     title: 'PearlZone | Budapest itinerary PDF + free packing checklist',
     description:
-      'A polished Budapest itinerary landing page with a premium PDF offer, real preview pages, and a genuinely useful free packing checklist.',
+      'Carefully paced Budapest itinerary PDFs with a free packing checklist and a premium 3-to-5-day city guide.',
     url: siteConfig.siteUrl,
     siteName: siteConfig.name,
     images: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PearlZone | Budapest itinerary PDF + free packing checklist',
     description:
-      'A polished Budapest itinerary landing page with a premium PDF offer, real preview pages, and a genuinely useful free packing checklist.',
+      'Carefully paced Budapest itinerary PDFs with a free packing checklist and a premium 3-to-5-day city guide.',
     images: ['/hero.jpg'],
   },
 }
@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             rel="noreferrer"
             className="flex items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-lg"
           >
-            Buy the premium itinerary
+            Get the premium itinerary
           </a>
         </div>
       </body>

@@ -19,31 +19,31 @@ export type IconCard = {
 }
 
 export const heroPills = [
-  '3-day core route',
-  '2 bonus days',
+  '3 core days',
+  '2 add-on days',
   'Free packing checklist',
   'Official links appendix',
 ]
 
 export const premiumBullets: IconCard[] = [
   {
-    title: 'Day-by-day route logic',
-    body: 'A practical sequence that keeps the city coherent instead of forcing too many big sights into the same block.',
+    title: 'Smarter sequencing',
+    body: 'The guide keeps each day geographically coherent so you spend less time zig-zagging across the city.',
     icon: CalendarDays,
   },
   {
-    title: 'Neighborhood-aware planning',
-    body: 'Each day stays anchored in one part of the city so you spend more time enjoying Budapest and less time zig-zagging.',
+    title: 'Reserve-first guidance',
+    body: 'You get quick notes on what is worth booking early and what can stay flexible until you land.',
     icon: Compass,
   },
   {
-    title: 'Food and café anchors',
-    body: 'The guide deliberately creates breaks, not just landmarks. That keeps the trip human-scaled.',
+    title: 'Food and coffee anchors',
+    body: 'The days include natural breaks for lunch, coffee, and a calmer reset between headline sights.',
     icon: UtensilsCrossed,
   },
   {
-    title: 'Bath + rainy-day backups',
-    body: 'You get softer alternatives when the weather changes or energy drops, so the trip still feels designed.',
+    title: 'Rainy-day and low-energy swaps',
+    body: 'The route still works when the weather changes or when you want to slow the trip down a little.',
     icon: Umbrella,
   },
 ]
@@ -52,67 +52,67 @@ export const dayCards = [
   {
     label: 'Day 1',
     title: 'Castle District + Danube',
-    body: 'Postcard Budapest done in a calm order: Bastion, church, riverfront, then an evening finish with room for sunset.',
+    body: 'A strong first-impression day built around the Bastion, church interiors, river views, and an elegant evening finish.',
   },
   {
     label: 'Day 2',
-    title: 'Parliament + Baths + Quarter',
-    body: 'A ceremonial morning, a real thermal block, then dinner and evening energy in the Jewish Quarter.',
+    title: 'Parliament + baths + Quarter',
+    body: 'The ceremonial city core in the morning, thermal recovery in the afternoon, and the Jewish Quarter once the pace lifts again.',
   },
   {
     label: 'Day 3',
     title: 'City Park + Andrássy',
-    body: 'A more breathable day with park space, architecture, coffee, and a stronger final dinner booking.',
+    body: 'A more breathable day of architecture, park space, cafés, and a final dinner that feels earned rather than rushed.',
   },
   {
     label: 'Day 4',
     title: 'Szentendre add-on',
-    body: 'The optional slower detour: small streets, art-town mood, and an easier pace if you want more margin.',
+    body: 'A slower art-town day if you want one well-paced escape from the centre without losing the feel of the trip.',
   },
   {
     label: 'Day 5',
     title: 'Synagogue + food-led finish',
-    body: 'A neighborhood-driven closing day focused on atmosphere, cafés, shops, and a softer final night.',
+    body: 'A softer closing day shaped around the Jewish Quarter, good food, design shops, and a final golden-hour walk.',
   },
 ]
 
 export const checklistBullets: IconCard[] = [
   {
-    title: 'Before-you-fly checks',
-    body: 'Arrival route, offline address, and the bookings that are genuinely worth locking before the rest of the trip.',
+    title: 'What to save offline',
+    body: 'Addresses, confirmations, transport tools, and the small details that are annoying to look for after you land.',
     icon: PlaneLanding,
   },
   {
-    title: 'Daily bag essentials',
-    body: 'The practical items that stop small logistics from eating into your day once you are walking the city.',
+    title: 'What to pack for walking and baths',
+    body: 'A simple carry system for long city days, weather swings, and a thermal-bath session that still feels easy.',
     icon: Download,
   },
   {
-    title: 'City-use habits',
-    body: 'Simple reminders that keep Budapest enjoyable: pacing, under-planning your final evening, and protecting your recovery blocks.',
+    title: 'What to sort before the flight home',
+    body: 'A short reset list so the final evening stays pleasant and the departure morning stays calm.',
     icon: CheckCircle2,
   },
 ]
 
 export const valueProps: IconCard[] = [
   {
-    title: 'Actually works offline',
-    body: 'Save the PDFs before you fly and keep the route handy even when your connection is patchy.',
-    icon: Download,
-  },
-  {
-    title: 'Uses official resources where it matters',
-    body: 'The premium guide ends with the links worth checking right before the trip.',
-    icon: MapPinned,
-  },
-  {
-    title: 'Made for walking and recovery',
-    body: 'The plan intentionally balances big sights with baths, cafés, and lower-pressure transitions.',
+    title: 'Built for walking days',
+    body: 'The route is designed around how Budapest actually feels on foot, not around collecting the longest list of stops.',
     icon: Waves,
   },
   {
-    title: 'Pairs with the free checklist',
-    body: 'Use the free download to sort the practical details, then use the premium guide to sequence the city.',
+    title: 'Easy to save offline',
+    body: 'Both PDFs are laid out to be readable on a phone and useful once you are already out in the city.',
+    icon: Download,
+  },
+  {
+    title: 'Current official links included',
+    body: 'The premium guide ends with the official visitor pages worth checking right before the trip.',
+    icon: MapPinned,
+  },
+  {
+    title: 'Works for 3 days or 5',
+    body: 'Use the 3-day core alone or add the extra two days when you want more breathing room in the schedule.',
     icon: Ticket,
   },
 ]
@@ -120,18 +120,18 @@ export const valueProps: IconCard[] = [
 export const faqs = [
   {
     q: 'What is free and what is paid?',
-    a: 'The Budapest packing checklist is free. The larger 3-day core itinerary with the 2-day extension is the paid PDF.',
+    a: 'The Budapest packing checklist is free. The larger 3-day premium itinerary with the 2-day extension is the paid PDF.',
   },
   {
-    q: 'Does the premium PDF work well on a phone?',
-    a: 'Yes. It was laid out to be readable on a phone, easy to save offline, and simple to reference while you are already in the city.',
+    q: 'Is the premium guide easy to use on a phone?',
+    a: 'Yes. It is laid out to be readable on a phone, easy to save offline, and simple to reference while you are already in the city.',
   },
   {
-    q: 'Are prices and opening rules included?',
-    a: 'The guide avoids hard-coding details that can change. Instead, it gives you the route logic and the official links worth checking before you go.',
+    q: 'Does the premium file include current official links?',
+    a: 'Yes. The final appendix collects the official visitor pages worth checking for transport, baths, Parliament, church access, and a few other practical details.',
   },
   {
     q: 'Who is this best for?',
-    a: 'It is especially good for first-time visitors who want a cleaner 3-day Budapest plan, but it also works for return visitors who want a more structured extension.',
+    a: 'It is especially useful for first-time visitors who want a confident Budapest plan without over-scheduling every hour of the trip.',
   },
 ]

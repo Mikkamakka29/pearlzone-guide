@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import { Download } from 'lucide-react'
@@ -23,20 +24,23 @@ export function ChecklistDialog({
     <Dialog>
       <DialogTrigger asChild>
         <button
-          className={className || 'inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15'}
+          className={
+            className ||
+            'inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15'
+          }
         >
           {triggerLabel}
         </button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl overflow-hidden border border-border bg-white p-0 text-foreground dark:bg-card sm:rounded-2xl">
-        <div className="grid gap-0 md:grid-cols-[1.08fr_.92fr]">
-          <div className="bg-slate-50 p-6 md:p-8">
+      <DialogContent className="max-w-6xl overflow-hidden border border-border bg-white p-0 text-foreground dark:bg-card sm:rounded-2xl">
+        <div className="grid max-h-[88vh] gap-0 md:grid-cols-[1.05fr_.95fr]">
+          <div className="overflow-y-auto bg-slate-50 p-6 md:p-8">
             <DialogHeader className="space-y-3 text-left">
               <DialogTitle className="text-2xl text-slate-900">
                 Free Budapest packing checklist
               </DialogTitle>
               <DialogDescription className="text-base text-slate-600">
-                A genuinely useful 2-page companion PDF visitors can download instantly.
+                A concise companion PDF covering the practical side of the trip: what to save offline, what to pack for walking days and baths, and what to sort before you fly home.
               </DialogDescription>
             </DialogHeader>
 
@@ -66,7 +70,7 @@ export function ChecklistDialog({
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary/90"
               >
                 <Download className="h-4 w-4" />
-                Download checklist PDF
+                Download the free PDF
               </a>
               <a
                 href={siteConfig.freeChecklistUrl}
@@ -74,21 +78,26 @@ export function ChecklistDialog({
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
               >
-                Open in new tab
+                Open in a new tab
               </a>
             </div>
           </div>
 
-          <div className="grid gap-0 bg-white md:grid-rows-2">
-            {siteConfig.checklistPreviewPages.map((page) => (
-              <div key={page.src} className="border-b border-slate-200 last:border-b-0">
-                <img
-                  src={page.src}
-                  alt={page.alt}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            ))}
+          <div className="overflow-y-auto bg-slate-100 p-4 md:p-5">
+            <div className="grid gap-4">
+              {siteConfig.checklistPreviewPages.map((page) => (
+                <div
+                  key={page.src}
+                  className="overflow-hidden rounded-[1.2rem] border border-slate-200 bg-white shadow-sm"
+                >
+                  <img
+                    src={page.src}
+                    alt={page.alt}
+                    className="h-auto w-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </DialogContent>

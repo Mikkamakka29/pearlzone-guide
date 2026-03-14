@@ -12,7 +12,7 @@ export function SiteFooter() {
             <span className="text-primary">Zone</span>
           </p>
           <p className="mt-4 max-w-xl text-sm leading-6 text-slate-400">
-            Budapest planning files built to be clear, calm, and easy to save offline before you fly.
+            Budapest planning files for trips that feel calm, elegant, and easy to follow once you are actually there.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-4 md:justify-end">

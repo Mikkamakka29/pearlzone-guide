@@ -17,7 +17,7 @@ export default function Home() {
           alt="Golden-hour aerial view of Budapest"
           className="absolute inset-0 h-full w-full object-cover opacity-80"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,40,0.45)_0%,rgba(7,17,40,0.72)_50%,rgba(7,17,40,0.88)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,40,0.38)_0%,rgba(7,17,40,0.68)_50%,rgba(7,17,40,0.9)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,rgba(7,17,40,0)_0%,rgba(247,243,237,1)_100%)]" />
 
         <div className="container relative z-10 flex min-h-[88svh] items-center pt-28 pb-20">
@@ -34,10 +34,10 @@ export default function Home() {
             </div>
 
             <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              Plan Budapest in minutes, not in 30 browser tabs.
+              A beautifully paced Budapest plan for 3 to 5 days.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-xl sm:leading-8">
-              Get a premium 3-day core itinerary with a clean 2-day extension, plus a genuinely useful free packing checklist you can download instantly.
+              See the classics, leave room for baths and long lunches, and move through the city in a sequence that actually feels good on the ground.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -47,7 +47,7 @@ export default function Home() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-2xl shadow-primary/20 transition hover:bg-primary/90"
               >
-                Buy the premium itinerary
+                Get the premium itinerary
                 <ArrowRight className="h-4 w-4" />
               </a>
               <ChecklistDialog />
@@ -60,7 +60,7 @@ export default function Home() {
               </span>
               <span className="inline-flex items-center gap-2">
                 <Download className="h-4 w-4 text-accent" />
-                Free packing checklist available right now
+                Free checklist included for the practical side of the trip
               </span>
             </div>
           </div>
@@ -72,9 +72,9 @@ export default function Home() {
           <Card className="overflow-hidden rounded-[2rem] border-slate-200 bg-white shadow-sm">
             <CardContent className="p-8 sm:p-10">
               <SectionHeading
-                eyebrow="Premium offer"
-                title="What the premium PDF actually helps you do"
-                body="It is built to remove sequencing decisions, protect your energy, and keep the city feeling elegant instead of over-packed."
+                eyebrow="Premium itinerary"
+                title="What the premium guide includes"
+                body="A calm, premium-feeling PDF designed for visitors who want fewer decisions, cleaner routing, and a better trip on the ground."
               />
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {premiumBullets.map(({ title, body, icon: Icon }) => (
@@ -93,13 +93,13 @@ export default function Home() {
           <Card className="overflow-hidden rounded-[2rem] border-slate-200 bg-slate-950 text-white shadow-sm">
             <CardContent className="p-8 sm:p-10">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
-                Free download
+                Free companion PDF
               </p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight">
-                Start with the practical companion file.
+                Download the Budapest packing checklist.
               </h2>
               <p className="mt-4 text-base leading-7 text-white/80">
-                Download a short, practical companion PDF that handles the packing and prep side of the trip before you buy anything.
+                A concise companion PDF covering what to save offline, what to pack for long city days and baths, and what to sort before the flight home.
               </p>
 
               <div className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-3">
@@ -133,8 +133,8 @@ export default function Home() {
         <div className="container">
           <SectionHeading
             eyebrow="Preview gallery"
-            title="Preview the premium PDF before you buy"
-            body="The preview pages show the tone, structure, and readability of the premium guide so you know exactly what kind of trip planning help you are getting."
+            title="See sample pages before you buy"
+            body="These full-page previews show the structure, pacing, and readability of the premium file - including the official-links appendix at the end."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {siteConfig.premiumPreviewPages.map((page) => (
@@ -143,6 +143,8 @@ export default function Home() {
                 src={page.src}
                 alt={page.alt}
                 label={page.label}
+                caption={page.caption}
+                links={page.links}
               />
             ))}
           </div>
@@ -152,9 +154,9 @@ export default function Home() {
       <section className="bg-[#faf7f2] py-20">
         <div className="container">
           <SectionHeading
-            eyebrow="Route architecture"
-            title="The guide is organised around cleaner days, not more attractions"
-            body="This is what makes the PDF feel worth paying for: the city is sequenced in a way that reduces friction and keeps energy where it matters."
+            eyebrow="Day structure"
+            title="Five days, organised for real travel days"
+            body="The guide is built around neighborhood rhythm, walking comfort, and the kinds of pauses that keep Budapest feeling elegant instead of over-packed."
           />
           <div className="mt-10 grid gap-6 lg:grid-cols-5">
             {dayCards.map((day) => (
@@ -178,9 +180,9 @@ export default function Home() {
       <section className="bg-white py-20">
         <div className="container">
           <SectionHeading
-            eyebrow="Project value"
-            title="Why this guide lands better than generic travel posts"
-            body="It is designed to reduce decision fatigue, not impress you with the longest possible list of things to do."
+            eyebrow="Why it works"
+            title="Made for better travel days on the ground"
+            body="The real value is not more stops. It is less friction, better pacing, and a route that still feels calm once you are actually in the city."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {valueProps.map(({ title, body, icon: Icon }) => (
@@ -204,13 +206,13 @@ export default function Home() {
         <div className="container grid gap-8 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:grid-cols-[1fr_auto] lg:items-center lg:p-10">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-              Ready to plan
+              Start with the essentials
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
-              Use the free checklist first, then grab the full premium itinerary when you are ready to lock the route.
+              Download the free checklist first, then move to the full route when you are ready.
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
-              The premium PDF is built for visitors who want Budapest to feel clean, paced, and easy to follow on the ground - not like a race between disconnected highlights.
+              The free PDF takes care of the practical details. The premium file turns the city itself into a calmer, better-sequenced plan.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 lg:justify-end">
@@ -224,7 +226,7 @@ export default function Home() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-4 text-sm font-semibold text-white shadow-lg transition hover:bg-primary/90"
             >
-              Buy the premium PDF
+              Get the premium itinerary
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -235,8 +237,8 @@ export default function Home() {
         <div className="container grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <SectionHeading
             eyebrow="FAQ"
-            title="Frequently asked before buying"
-            body="The goal is to answer the practical questions quickly so the page stays calm and conversion-friendly."
+            title="A few quick answers before you buy"
+            body="Short, practical answers for the things most visitors want to know before they download the files."
           />
           <Accordion type="single" collapsible className="w-full rounded-[1.6rem] border border-slate-200 bg-slate-50 px-6">
             {faqs.map((item, index) => (

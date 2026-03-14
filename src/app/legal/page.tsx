@@ -16,37 +16,44 @@ export default function LegalPage() {
         </h1>
         <div className="mt-8 space-y-8 text-sm leading-7 text-slate-700">
           <section>
-            <h2 className="text-lg font-bold text-slate-950">Digital product delivery</h2>
+            <h2 className="text-lg font-bold text-slate-950">Digital delivery</h2>
             <p className="mt-2">
-              The premium itinerary is intended to be delivered as a digital PDF through Gumroad or another checkout platform you configure. The free packing checklist is a public download intended as a lead magnet or goodwill asset.
+              The Budapest premium itinerary and the Budapest packing checklist are digital PDF products delivered by download. If you have trouble accessing a file, please get in touch and we will help.
             </p>
           </section>
 
           <section>
             <h2 className="text-lg font-bold text-slate-950">Personal-use license</h2>
             <p className="mt-2">
-              The PDFs are designed for personal travel planning. If you plan to sell or distribute the premium itinerary commercially, keep your checkout terms, refund policy, and ownership wording aligned with your final business setup.
+              These files are intended for personal travel planning. They may not be redistributed, resold, or published publicly without written permission.
             </p>
           </section>
 
           <section>
             <h2 className="text-lg font-bold text-slate-950">Planning disclaimer</h2>
             <p className="mt-2">
-              Travel information changes. Attraction access rules, prices, temporary closures, and transport flows can shift. The premium guide deliberately includes official visitor links so travelers can verify the small number of details that genuinely need a last check.
+              Travel information changes. Opening hours, ticketing rules, temporary closures, transport details, and visitor access can shift. Please verify any time-sensitive detail through the official resources linked in the guide before you go.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-bold text-slate-950">Refunds</h2>
+            <p className="mt-2">
+              Because the premium itinerary is a digital product, purchases are generally final. If you received the wrong file or your download is defective, contact us and we will make it right.
             </p>
           </section>
 
           <section>
             <h2 className="text-lg font-bold text-slate-950">Affiliate disclosure</h2>
             <p className="mt-2">
-              If you add GetYourGuide, transport, or accommodation affiliate links to the project, disclose them clearly on the relevant page and at checkout where appropriate.
+              Some outbound links may be affiliate links. If you book through them, PearlZone may earn a commission at no extra cost to you.
             </p>
           </section>
 
           <section>
             <h2 className="text-lg font-bold text-slate-950">Contact</h2>
             <p className="mt-2">
-              For file issues or configuration questions, use{' '}
+              For file issues, delivery questions, or general support, email{' '}
               <a className="font-semibold text-primary underline" href={`mailto:${siteConfig.contactEmail}`}>
                 {siteConfig.contactEmail}
               </a>
